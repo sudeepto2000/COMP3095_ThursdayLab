@@ -10,7 +10,7 @@ public interface ProductService {
     List<ProductResponse> getAllProducts();
 
     String updateProduct(String id, ProductRequest productRequest);
-    boolean deleteProduct(String id);
+    void deleteProduct(String id);
 
 
 }
