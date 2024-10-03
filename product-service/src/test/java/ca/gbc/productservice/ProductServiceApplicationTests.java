@@ -42,14 +42,14 @@ class ProductServiceApplicationTests {
 
     @Test
     void createProductTest(){
-
         String requestBody = """
                 {
                     "name" : "Samsung TV",
-                    "description" :"Samsung TV - Model 2024"
-                    "price" : "2000";
+                    "description" :"Samsung TV - Model 2024",
+                    "price" : "2000"
                 }
                 """;
+
 
         //BDD -0 Behavioural Driven Development (Given, When, Then)
         //Check controller for expected status code
@@ -65,8 +65,6 @@ class ProductServiceApplicationTests {
                 .body("name", Matchers.equalTo("Samsung TV"))
                 .body("description", Matchers.equalTo("Samsung TV - Model 2024"))
                 .body("price",Matchers.equalTo(2000));
-
-
     }
 
 
@@ -77,8 +75,8 @@ class ProductServiceApplicationTests {
         String requestBody = """
                 {
                     "name" : "Samsung TV",
-                    "description" :"Samsung TV - Model 2024"
-                    "price" : "2000";
+                    "description" :"Samsung TV - Model 2024",
+                    "price" : "2000"
                 }
                 """;
 
