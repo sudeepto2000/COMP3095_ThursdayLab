@@ -1,0 +1,36 @@
+#this file should exist in the root of the project
+version: '3.9'
+
+services:
+
+  product-service:
+    image: product-service
+    #ports match with Dockerfile
+    ports:
+      - "8084:8084"
+    build:
+      context: ./product-service #The directory where the dockerfile resides
+      dockerfile: ./Dockerfile
+    container_name: product-service
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mongodb
+    networks:
+      - spring
+
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - ./data/mongo/products:/data/db
+      - ./init/mongo/docker-entrypoint-initdb.d/mongo-init.js/mongo-init.js:/init/mongo/docker-entrypoint-initdb.d/mongo-init.js/mongo-init.js:ro #ro is delete the next queue
+    #restart: unless-stopped #docker will restart until we manually stop it
+    command: mongod -auth
+    networks:
+      - spring
