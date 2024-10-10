@@ -12,9 +12,4 @@ db.createCollection('user');
 
 
 
-
-
-
-
-
 print('END');
