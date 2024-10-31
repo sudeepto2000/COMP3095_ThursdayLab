@@ -1,6 +1,6 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.3.3"
+    id("org.springframework.boot") version "3.3.4"
     id("io.spring.dependency-management") version "1.1.6"
 }
 
@@ -22,6 +22,8 @@ configurations {
 repositories {
     mavenCentral()
 }
+
+tasks.register("prepareKotlinBuildScriptModel"){}
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
