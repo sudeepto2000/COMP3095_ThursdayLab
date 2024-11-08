@@ -50,7 +50,7 @@ public class ProductController {
 
         //set the location header attribute
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Location","api/product" + updateProductId);
+        headers.add("Location","/api/product" + updateProductId);
 
         return new ResponseEntity<>(headers, HttpStatus.NO_CONTENT);
     }

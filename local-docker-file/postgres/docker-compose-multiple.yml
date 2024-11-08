@@ -17,6 +17,18 @@ services:
       - ./data/inventory:/var/lib/postgresql/data/
       - ./init/inventory/init.sql:/docker-entrypoint-initdb.d/init.sql
 
+  postgres2:
+    image: postgres
+    ports:
+      - "5433:5432" #For order services
+    container_name: postgres-single-order
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=order-services
+    volumes:
+      - ./data/order:/var/lib/postgresql/data/
+      - ./init/order/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   pgadmin:
     image: dpage/pgadmin4
