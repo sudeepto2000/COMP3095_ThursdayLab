@@ -7,7 +7,6 @@ import ca.gbc.orderservice.repository.OrderRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -16,7 +15,6 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 @Transactional //allows roll back if you want to
-@EnableFeignClients(basePackages = "ca.gbc.orderservice.client")
 public class OrderServiceImpl implements OrderService{
 
     private final OrderRepository orderRepository;

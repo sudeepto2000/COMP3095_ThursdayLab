@@ -14,9 +14,9 @@ services:
     image: product-service
     #ports match with Dockerfile
     ports:
-      - "8084:8084"
+      - "8085:8085"
     build:
-      context: ./product-service #The directory where the dockerfile resides
+      context: ../../product-service #The directory where the dockerfile resides
       dockerfile: ./Dockerfile
     container_name: product-service
     environment:

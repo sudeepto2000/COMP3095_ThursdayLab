@@ -13,6 +13,7 @@ services:
   product-service:
     image: product-service
     #ports match with Dockerfile
+    #Left side is for localhost. Right side port is docker internal ports
     ports:
       - "8084:8084"
     build:
