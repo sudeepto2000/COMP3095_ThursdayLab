@@ -5,7 +5,7 @@
 
 FROM gradle:8-jdk-21-and-22-alpine AS builder
 
-COPY --chown=gradle:gralde . /home/gradle/src
+COPY --chown=gradle:gradle . /home/gradle/src
 
 WORKDIR /home/gradle/src
 

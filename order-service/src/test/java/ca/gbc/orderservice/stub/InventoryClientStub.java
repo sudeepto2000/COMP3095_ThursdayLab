@@ -12,7 +12,7 @@ public class InventoryClientStub {
                 .willReturn(aResponse()
                         .withStatus(200) //The status code to expect from inventory service
                         .withHeader("Content-Type", "application/json")
-                        .withBody("True"))
+                        .withBody("true"))
         );
     }
 }

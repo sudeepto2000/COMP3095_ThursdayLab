@@ -5,7 +5,7 @@
 
 FROM gradle:8-jdk-21-and-22-alpine AS builder
 
-COPY --chown=gradle:gralde . /home/gradle/src
+COPY --chown=gradle:gradle . /home/gradle/src
 
 WORKDIR /home/gradle/src
 
@@ -28,6 +28,6 @@ ENV POSTGRES_USER=admin \
     POSTGRES_DB=inventory-services
 
 #Different port than the original one
-EXPOSE 8082
+EXPOSE 8083
 
 ENTRYPOINT ["java", "-jar", "/app/inventory-service.jar"]
